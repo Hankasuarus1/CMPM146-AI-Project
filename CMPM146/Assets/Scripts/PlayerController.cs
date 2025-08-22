@@ -29,8 +29,10 @@ public class PlayerController : MonoBehaviour
     private bool sprint = false;
     private float pitch;
     private float groundCheckDistance = 1.2f;
+    private float shootRange = 100f;
     [SerializeField] private LayerMask groundMask;
-
+    [SerializeField] private LayerMask enemyMask;
+ 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -110,7 +112,16 @@ public class PlayerController : MonoBehaviour
 
     void shootHandler() 
     {
-        Debug.Log("Shot");
+        Debug.Log("Fired Shot");
+        Vector3 origin = cam.transform.position;
+        Vector3 direction = cam.transform.forward;
+        Debug.DrawLine(origin, direction * shootRange, Color.red, 10f);
+        if (Physics.Raycast(origin, direction, out RaycastHit hit, shootRange, enemyMask))
+        {
+            Debug.Log("Shot Enemy");
+            EnemyController enemy = hit.collider.GetComponent<EnemyController>();
+            enemy.takeDamage(5f);
+        }
     }
     public bool onGround() 
     {
