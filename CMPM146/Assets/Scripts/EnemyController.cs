@@ -27,5 +27,6 @@ public class EnemyController : MonoBehaviour
 
     void die()
     {
+        Destroy(gameObject);
     }
 }
