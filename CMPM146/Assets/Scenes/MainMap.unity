@@ -326,7 +326,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6891045156334564065, guid: f0346b754d468f1439eae85a4e974c41, type: 3}
       propertyPath: mouseSens
-      value: 20
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891045156334564065, guid: f0346b754d468f1439eae85a4e974c41, type: 3}
+      propertyPath: walkSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6891045156334564065, guid: f0346b754d468f1439eae85a4e974c41, type: 3}
+      propertyPath: sprintSpeed
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6891045156334564065, guid: f0346b754d468f1439eae85a4e974c41, type: 3}
       propertyPath: enemyMask.m_Bits
