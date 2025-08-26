@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mouseDelta;
     private bool sprint = false;
     private float pitch;
-    private float groundCheckDistance = 1.2f;
+    private float groundCheckDistance = 1f;
     private float shootRange = 100f;
     [SerializeField] private LayerMask groundMask;
     [SerializeField] private LayerMask enemyMask;
@@ -119,13 +119,13 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(origin, direction, out RaycastHit hit, shootRange, enemyMask))
         {
             Debug.Log("Shot Enemy");
-            EnemyController enemy = hit.collider.GetComponent<EnemyController>();
-            enemy.takeDamage(5f);
+            Health enemy = hit.collider.GetComponent<Health>();
+            enemy.TakeDamage(3);
         }
     }
     public bool onGround() 
     {
-        bool grounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, groundCheckDistance, groundMask);
+        bool grounded = Physics.Raycast(transform.position + Vector3.up * 1f, Vector3.down, groundCheckDistance, groundMask);
         Debug.Log(grounded);
         return grounded;
     }

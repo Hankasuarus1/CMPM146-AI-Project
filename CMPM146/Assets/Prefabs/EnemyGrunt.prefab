@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 5016363915515705380}
   - component: {fileID: 8855332545727004603}
   - component: {fileID: 5482501221460211694}
-  - component: {fileID: 6974548498591762413}
-  m_Layer: 0
+  - component: {fileID: -9096837683385385342}
+  - component: {fileID: -7943929599872070340}
+  m_Layer: 7
   m_Name: EnemyGrunt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHP: 10
---- !u!114 &6974548498591762413
+--- !u!114 &-9096837683385385342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -131,7 +132,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 4692742160835319003}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56ed09e557157bf4c9489d2e1242be3c, type: 3}
+  m_Script: {fileID: 11500000, guid: bced08d04fe71445cb06af93f1670fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 2.5
+  damage: 3
+  agent: {fileID: -7943929599872070340}
+  target: {fileID: 0}
+--- !u!195 &-7943929599872070340
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4692742160835319003}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 20
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 1
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

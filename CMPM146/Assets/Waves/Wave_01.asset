@@ -16,5 +16,11 @@ MonoBehaviour:
   postWaveDelay: 2
   entries:
   - enemyPrefab: {fileID: 4692742160835319003, guid: 34321390eee20ae4fa15884089262b3e, type: 3}
+    count: 5
+    interval: 0.3
+  - enemyPrefab: {fileID: 8026697474242074385, guid: 7e189bb0e20710243aa60ffd3a09bd16, type: 3}
     count: 3
+    interval: 0.3
+  - enemyPrefab: {fileID: 4692742160835319003, guid: 34321390eee20ae4fa15884089262b3e, type: 3}
+    count: 5
     interval: 0.3

@@ -1,32 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyController : MonoBehaviour
 {
     [Header("Stats")]
-    public float health;
     public float damage;
+    [SerializeField] private NavMeshAgent agent;
+    [SerializeField]private Transform target;
     void Start()
     {
-        
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        chase();
     }
 
-    public void takeDamage(float x)
+    void chase()
     {
-        health -= x;
-        if (health <= 0)
-            die();
-    }
-
-    void die()
-    {
-        Destroy(gameObject);
+        agent.SetDestination(target.position);
     }
 }
